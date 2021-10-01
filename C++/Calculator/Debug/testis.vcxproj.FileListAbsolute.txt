@@ -1,0 +1,3 @@
+F:\Kuliah\C++\Final Project\testis\testis\Debug\testis.vcxprojAssemblyReference.cache
+F:\Kuliah\C++\Final Project\testis\testis\Debug\testis.Form1.resources
+F:\Kuliah\C++\Final Project\testis\testis\Debug\testis.vcxproj.GenerateResource.cache
