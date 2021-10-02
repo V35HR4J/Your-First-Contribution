@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Navbar</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            z-index: 9999;
+            width: 100%;
+            background-color: coral;
+            box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .navbar a {
+            text-decoration: none;
+        }
+
+        .logo {
+            color: black;
+            font-size: 30px;
+            padding: 15px;
+            font-weight: bold;
+            animation: example 3s infinite alternate ease-in-out;
+        }
+
+        @keyframes example {
+            0% {
+                transform: rotateY(-360deg);
+            }
+
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+
+        .icon {
+            position: absolute;
+            display: none;
+            padding: 24px;
+            right: 0;
+            color: white;
+        }
+
+        .nav-tabs {
+            padding: 20px;
+        }
+
+        .nav-tabs a.nav-item {
+            position: relative;
+            color: white;
+            margin: 20px;
+            font-size: 20px;
+        }
+
+        .nav-tabs a.nav-item:before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #fff;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .nav-tabs a.nav-item:hover:before {
+            visibility: visible;
+            width: 100%;
+        }
+
+        @media screen and (max-width: 600px) {
+            .nav-tabs {
+                display: none;
+            }
+
+            .icon {
+                display: block;
+            }
+
+            .responsive {
+                display: block;
+            }
+
+            .responsive a {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <a class="logo" href="#">Logo</a>
+            <a class="icon" onclick="myFunction()" id="icon" href="#"><i class="fa fa-bars"></i></a>
+            <div class="nav-tabs" id="myTopnav">
+                <a class="nav-item" href="#">Home</a>
+                <a class="nav-item" href="#">About</a>
+                <a class="nav-item" href="#">Contact</a>
+                <a class="nav-item" href="signin.html">SignIN</a>
+            </div>
+        </nav>
+    </header>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "nav-tabs") {
+                x.className += " responsive";
+                document.getElementById('icon').innerHTML = '<i class="fa fa-times" aria-hidden="true"></i>';
+            } else {
+                x.className = "nav-tabs";
+                document.getElementById('icon').innerHTML = '<i class="fa fa-bars"></i>';
+            }
+        }
+    </script>
+</body>
+
+</html>
