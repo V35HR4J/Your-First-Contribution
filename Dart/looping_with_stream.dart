@@ -11,6 +11,7 @@ void main() {
   final _controller = StreamController<int>();
 
   Timer.periodic(Duration(seconds: 2), (timer) {
+    // Add event to controller
     _controller.sink.add(timer.tick);
 
     /// After reached 100 looping with sleep 2 second
@@ -20,4 +21,7 @@ void main() {
       _controller.close();
     }
   });
+  
+  // Function print with Stream listen method
+  _controller.stream.listen(print);
 }
