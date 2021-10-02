@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wrist Watch</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --watch: black;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .watch {
+            display: flex;
+            position: relative;
+        }
+
+        .band-left {
+            width: 300px;
+            height: 100px;
+            background-color: var(--watch);
+            border-radius: 50% 0 0 50%;
+            margin-top: 10px;
+        }
+
+        .display {
+            width: 120px;
+            height: 120px;
+            border: 10px solid grey;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .display-text {
+            color: black;
+        }
+
+        .band-right {
+            width: 225px;
+            height: 100px;
+            background-color: var(--watch);
+            margin-top: 10px;
+        }
+
+        .hook {
+            border: 10px solid grey;
+            width: 55px;
+            height: 100px;
+            margin-top: 10px;
+            position: relative;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .dots {
+            font-size: 60px;
+            color: white;
+            letter-spacing: 20px;
+            float: right;
+        }
+
+        .hook-pin {
+            position: absolute;
+            height: 5px;
+            width: 45px;
+            background-color: black;
+            right: -35px;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 0 50% 50% 0;
+        }
+
+        .holder {
+            position: absolute;
+            border: 10px solid grey;
+            height: 100px;
+            margin-top: 10px;
+            left: 68%;
+        }
+
+        .color-name {
+            height: 55px;
+            display: flex;
+            align-items: center;
+        }
+
+        .color-box {
+            min-width: 50px;
+            height: 50px;
+            margin: 0 20px;
+            cursor: pointer;
+            opacity: 0.7;
+        }
+
+        .color-box:hover {
+            opacity: 1;
+        }
+
+        .active {
+            opacity: 1;
+            min-width: 60px;
+            height: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="watch">
+            <div class="band-left">
+                <div class="dots">.......</div>
+            </div>
+            <div class="display">
+                <h2 class="display-text"></h2>
+            </div>
+            <div class="holder"></div>
+            <div class="band-right"></div>
+            <div class="hook">
+                <div class="hook-pin"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1 class="color-name">Band Color: </h1>
+        <div class="color-box active" onclick="change(this)" style="background-color: black;"></div>
+        <div class="color-box" onclick="change(this)" style="background-color: pink;"></div>
+        <div class="color-box" onclick="change(this)" style="background-color: purple;"></div>
+        <div class="color-box" onclick="change(this)" style="background-color: orange;"></div>
+        <div class="color-box" onclick="change(this)" style="background-color: blue;"></div>
+    </div>
+    <script>
+        console.clear();
+        var r = document.querySelector(":root");
+
+        setInterval(function () {
+            var currentdate = new Date();
+            document.getElementsByClassName("display-text")[0].innerHTML =
+                currentdate.getHours() +
+                ":" +
+                currentdate.getMinutes() +
+                ":" +
+                currentdate.getSeconds();
+        }, 1000);
+
+        function change(x) {
+            r.style.setProperty("--watch", x.style.backgroundColor);
+            document.getElementsByClassName("active")[0].classList.remove("active");
+            x.classList.add("active");
+        }
+
+    </script>
+</body>
+
+</html>
