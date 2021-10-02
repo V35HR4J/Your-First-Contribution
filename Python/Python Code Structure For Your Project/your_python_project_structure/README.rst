@@ -2,9 +2,9 @@
 Your Python Project Structure
 =============================
 
-<b>An Efficient & Comprehensive Project Structure For Your Python Project by Cookiecutter.</b>
-<br><br>
-<i> Note: This project structure is tweaked tributing Hacktoberfest 2021. Happy Coding!</i>
+An Efficient & Comprehensive Project Structure For Your Python Project by Cookiecutter.
+
+ Note: This project structure is tweaked tributing Hacktoberfest 2021. Happy Coding!
 
 
 .. image:: https://img.shields.io/pypi/v/your_python_project_structure.svg
