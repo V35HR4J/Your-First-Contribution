@@ -39,8 +39,6 @@ So, yes! You can win a T-Shirt and few awesome stickers to attach on your laptop
 - Publishing others' private information, such as a physical or electronic address, without explicit permission
 ---
 
-## 🎯Objectives
-**The Main Objectives of this Repositry is to help People for their Contribution in Hacktoberfest 2021**
 
 ---
 ## Steps to setup this Repository Locally
