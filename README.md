@@ -54,6 +54,10 @@ So, yes! You can win a T-Shirt and few awesome stickers to attach on your laptop
 
  3. Open the folder in your favourite code editor and add your changes or modifications.
 
+ 4. Make your own branch and switch to it to make your changes.
+ ```bash
+  git checkout -b "<your-branch-name>"
+ ```
 ## Creating a PR 
  
  1. After making changes or modification on to your code locally, you need to add these files to the staging area.
@@ -66,7 +70,7 @@ So, yes! You can win a T-Shirt and few awesome stickers to attach on your laptop
 ```
  3. After commiting the changes, you need to push the changes
 ```bash
-   git push origin <branch-name>
+   git push origin "<your-branch-name>"
 ```
  4. Once you push the changes to your repository, the Compare & pull request button will appear in GitHub.
 
