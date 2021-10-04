@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'buttons.dart';
 import 'package:math_expressions/math_expressions.dart';
-  
+
 void main() {
   runApp(MyApp());
 }
-  
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -15,16 +15,16 @@ class MyApp extends StatelessWidget {
     ); // MaterialApp
   }
 }
-  
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
-  
+
 class _HomePageState extends State<HomePage> {
   var userInput = '';
   var answer = '';
-  
+
   // Array of button
   final List<String> buttons = [
     'C',
@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
     '=',
     '+',
   ];
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -107,7 +107,7 @@ class _HomePageState extends State<HomePage> {
                         textColor: Colors.black,
                       );
                     }
-  
+
                     // +/- button
                     else if (index == 1) {
                       return MyButton(
@@ -156,7 +156,7 @@ class _HomePageState extends State<HomePage> {
                         textColor: Colors.white,
                       );
                     }
-  
+
                     //  other buttons
                     else {
                       return MyButton(
@@ -181,19 +181,19 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-  
+
   bool isOperator(String x) {
     if (x == '/' || x == 'x' || x == '-' || x == '+' || x == '=') {
       return true;
     }
     return false;
   }
-  
+
 // function to calculate the input operation
   void equalPressed() {
     String finaluserinput = userInput;
     finaluserinput = userInput.replaceAll('x', '*');
-  
+
     Parser p = Parser();
     Expression exp = p.parse(finaluserinput);
     ContextModel cm = ContextModel();
