@@ -1,0 +1,39 @@
+/* css reset */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-color: rgb(47, 127, 141);
+}
+
+#image{
+    height: 400px;
+    width: 400px;
+}
+
+.buttons{
+    margin: 10px;
+    padding: 12px;
+    cursor: pointer;
+    background-color: blueviolet;
+    border-radius: 10px;
+}
+
+.buttons:hover{
+    color: greenyellow;
+    background-color: black;
+    transition: ease-in-out 0.4s;
+}
+
+#imgBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#buttonBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
