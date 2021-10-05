@@ -1,0 +1,94 @@
+/* Left Image Logo CSS */
+
+#left_img{
+    display: inline-block;
+}
+
+#left_img img{
+    width: 100px;
+    filter: invert(100%);
+}
+
+/* Mid Navbar CSS */
+#navbar{
+    width: 35rem;
+    position: absolute;
+    height: 60px;
+    top: 0px;
+    left: 420px;
+}
+
+li a{
+    text-decoration: none;
+    margin: 0px 16px;
+    background-color: #ebe2e2;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+li a:hover{
+    background-color: sandybrown;
+    font-family: 'Nova Flat', cursive;
+    font-weight: bold;
+}
+
+li{
+    list-style: none;
+    float: left;
+}
+
+
+/* Right Buttons CSS */
+
+#top_buttons{
+    position: absolute;
+    right: 40px;
+    top: 0px;
+}
+
+.nav_buttons{
+    width: 100px;
+    height: 40px;
+    margin: 8px 14px 10px 20px;
+    font-weight: bolder;
+    border-radius: 30px;
+    background-color: #f8d1ff;
+}
+
+.nav_buttons:hover{
+    background-color: seashell;
+    cursor: pointer;
+    font-family: 'Nova Flat', cursive;
+}
+
+/* Form CSS */
+
+.form{
+    display: inline-block;
+    width: 35%;
+    height: 400px;
+    position: absolute;
+    top: 190px;
+    left: 80px;
+}
+
+.input_field{
+    padding: 16px 170px;
+    margin: 17px 0px 0px 0px;
+    height: 25px;
+    font-weight: bolder;
+    font-family: 'Bad Script', cursive;
+}
+
+.submit_btn{
+    margin: 15px 0px 0px 130px;
+    padding: 18px 70px 18px 67px;
+    background-color: #d8e26c;
+    font-weight: bolder;
+}
+
+.submit_btn:hover{
+    background-color: darkgray;
+    cursor: pointer;
+}
