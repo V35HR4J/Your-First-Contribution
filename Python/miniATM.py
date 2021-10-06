@@ -48,7 +48,7 @@ if(name in nameDatabase):
                 print(currentBalance)
 
 
-# this option ask checks the option input and produce a complaint
+# this option ask checks the option input and produce a complaint for users having issues
             elif option == 3:
                 complaint = input('what issue will you like to report?')
                 print('thank you for contacting us')
