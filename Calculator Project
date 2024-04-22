@@ -1,0 +1,451 @@
+<html lang="en"><head>
+
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+<link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+
+
+  <title>Javascript Calculator </title>
+  
+  
+  
+  
+<style>
+@import 'https://fonts.googleapis.com/css?family=Share+Tech+Mono';
+@font-face {
+  font-family: "Digital";
+  src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot");
+  src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff") format("woff"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.svg#Digital-7") format("svg");
+}
+#app {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  background: #c2c2d6;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+
+.calculator {
+  border: 2px solid #47476b;
+  padding: 5px;
+  background: black;
+  width: 320px;
+  position: relative;
+}
+
+.formulaScreen {
+  min-height: 20px;
+  font-family: digital;
+  font-size: 20px;
+  color: red;
+  text-align: right;
+  vertical-align: text-top;
+  line-height: 20px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.outputScreen {
+  font-size: 29px;
+  font-family: digital;
+  color: yellow;
+  text-align: right;
+  line-height: 35px;
+}
+
+button {
+  position: relative;
+  height: 65px;
+  width: 80px;
+  color: white;
+  outline: 1px solid black;
+  border: none;
+  background: #4d4d4d;
+  font-family: Share Tech Mono, monospace;
+  font-size: 20px;
+  cursor: default;
+}
+button:hover {
+  color: black;
+  outline: 0.05em solid grey;
+  z-index: 3;
+}
+
+.jumbo {
+  width: 160px;
+}
+
+.author {
+  text-align: center;
+  font-family: Share Tech Mono, sans;
+  margin-top: 15px;
+}
+.author a {
+  text-decoration: none;
+  color: #00264d;
+  line-height: 26px;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no">
+  <div id="app"><div data-reactroot=""><div class="calculator"><div class="formulaScreen"></div><div class="outputScreen" id="display">0</div><div><button class="jumbo" id="clear" value="AC" style="background: rgb(172, 57, 57);">AC</button><button id="divide" value="/" style="background: rgb(102, 102, 102);">/</button><button id="multiply" value="x" style="background: rgb(102, 102, 102);">x</button><button id="seven" value="7">7</button><button id="eight" value="8">8</button><button id="nine" value="9">9</button><button id="subtract" value="‑" style="background: rgb(102, 102, 102);">‑</button><button id="four" value="4">4</button><button id="five" value="5">5</button><button id="six" value="6">6</button><button id="add" value="+" style="background: rgb(102, 102, 102);">+</button><button id="one" value="1">1</button><button id="two" value="2">2</button><button id="three" value="3">3</button><button class="jumbo" id="zero" value="0">0</button><button id="decimal" value=".">.</button><button id="equals" value="=" style="background: rgb(0, 68, 102); position: absolute; height: 130px; bottom: 5px;">=</button></div></div><div class="author"><!-- react-text: 24 --> <!-- /react-text --><!-- react-text: 25 -->Designed and Coded By <!-- /react-text --><br><a href="https://goo.gl/6NNLMG" target="_blank">Peter Weinberg</a></div></div></div>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-8216c69d01441f36c0ea791ae2d4469f0f8ff5326f00ae2d00e4bb7d20e24edb.js"></script>
+
+  <script src="https://codepen.io/no_stack_dub_sack/pen/bwJxAw.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.min.js"></script>
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script><div id="fcc_test_suite_wrapper" style="position: relative !important; z-index: 99999 !important;"></div>
+      <script id="rendered-js">
+/* global React, ReactDOM */
+/* eslint-disable react/prop-types, react/no-multi-comp,
+ no-eval, no-nested-ternary */
+
+// eslint-disable-next-line no-unused-vars
+const projectName = 'javascript-calculator';
+
+
+// VARS:
+const isOperator = /[x/+‑]/,
+endsWithOperator = /[x+‑/]$/,
+endsWithNegativeSign = /\d[x/+‑]{1}‑$/,
+clearStyle = { background: '#ac3939' },
+operatorStyle = { background: '#666666' },
+equalsStyle = {
+  background: '#004466',
+  position: 'absolute',
+  height: 130,
+  bottom: 5 };
+
+
+// COMPONENTS:
+class Calculator extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentVal: '0',
+      prevVal: '0',
+      formula: '',
+      currentSign: 'pos',
+      lastClicked: '' };
+
+    this.maxDigitWarning = this.maxDigitWarning.bind(this);
+    this.handleOperators = this.handleOperators.bind(this);
+    this.handleEvaluate = this.handleEvaluate.bind(this);
+    this.initialize = this.initialize.bind(this);
+    this.handleDecimal = this.handleDecimal.bind(this);
+    this.handleNumbers = this.handleNumbers.bind(this);
+  }
+
+  maxDigitWarning() {
+    this.setState({
+      currentVal: 'Digit Limit Met',
+      prevVal: this.state.currentVal });
+
+    setTimeout(() => this.setState({ currentVal: this.state.prevVal }), 1000);
+  }
+
+  handleEvaluate() {
+    if (!this.state.currentVal.includes('Limit')) {
+      let expression = this.state.formula;
+      while (endsWithOperator.test(expression)) {if (window.CP.shouldStopExecution(0)) break;
+        expression = expression.slice(0, -1);
+      }window.CP.exitedLoop(0);
+      expression = expression.
+      replace(/x/g, '*').
+      replace(/‑/g, '-').
+      replace('--', '+0+0+0+0+0+0+');
+      let answer = Math.round(1000000000000 * eval(expression)) / 1000000000000;
+      this.setState({
+        currentVal: answer.toString(),
+        formula:
+        expression.
+        replace(/\*/g, '⋅').
+        replace(/-/g, '‑').
+        replace('+0+0+0+0+0+0+', '‑-').
+        replace(/(x|\/|\+)‑/, '$1-').
+        replace(/^‑/, '-') +
+        '=' +
+        answer,
+        prevVal: answer,
+        evaluated: true });
+
+    }
+  }
+
+  handleOperators(e) {
+    if (!this.state.currentVal.includes('Limit')) {
+      const value = e.target.value;
+      const { formula, prevVal, evaluated } = this.state;
+      this.setState({ currentVal: value, evaluated: false });
+      if (evaluated) {
+        this.setState({ formula: prevVal + value });
+      } else if (!endsWithOperator.test(formula)) {
+        this.setState({
+          prevVal: formula,
+          formula: formula + value });
+
+      } else if (!endsWithNegativeSign.test(formula)) {
+        this.setState({
+          formula:
+          (endsWithNegativeSign.test(formula + value) ? formula : prevVal) +
+          value });
+
+      } else if (value !== '‑') {
+        this.setState({
+          formula: prevVal + value });
+
+      }
+    }
+  }
+
+  handleNumbers(e) {
+    if (!this.state.currentVal.includes('Limit')) {
+      const { currentVal, formula, evaluated } = this.state;
+      const value = e.target.value;
+      this.setState({ evaluated: false });
+      if (currentVal.length > 21) {
+        this.maxDigitWarning();
+      } else if (evaluated) {
+        this.setState({
+          currentVal: value,
+          formula: value !== '0' ? value : '' });
+
+      } else {
+        this.setState({
+          currentVal:
+          currentVal === '0' || isOperator.test(currentVal) ?
+          value :
+          currentVal + value,
+          formula:
+          currentVal === '0' && value === '0' ?
+          formula === '' ?
+          value :
+          formula :
+          /([^.0-9]0|^0)$/.test(formula) ?
+          formula.slice(0, -1) + value :
+          formula + value });
+
+      }
+    }
+  }
+
+  handleDecimal() {
+    if (this.state.evaluated === true) {
+      this.setState({
+        currentVal: '0.',
+        formula: '0.',
+        evaluated: false });
+
+    } else if (
+    !this.state.currentVal.includes('.') &&
+    !this.state.currentVal.includes('Limit'))
+    {
+      this.setState({ evaluated: false });
+      if (this.state.currentVal.length > 21) {
+        this.maxDigitWarning();
+      } else if (
+      endsWithOperator.test(this.state.formula) ||
+      this.state.currentVal === '0' && this.state.formula === '')
+      {
+        this.setState({
+          currentVal: '0.',
+          formula: this.state.formula + '0.' });
+
+      } else {
+        this.setState({
+          currentVal: this.state.formula.match(/(-?\d+\.?\d*)$/)[0] + '.',
+          formula: this.state.formula + '.' });
+
+      }
+    }
+  }
+
+  initialize() {
+    this.setState({
+      currentVal: '0',
+      prevVal: '0',
+      formula: '',
+      currentSign: 'pos',
+      lastClicked: '',
+      evaluated: false });
+
+  }
+
+  render() {
+    return /*#__PURE__*/(
+      React.createElement("div", null, /*#__PURE__*/
+      React.createElement("div", { className: "calculator" }, /*#__PURE__*/
+      React.createElement(Formula, { formula: this.state.formula.replace(/x/g, '⋅') }), /*#__PURE__*/
+      React.createElement(Output, { currentValue: this.state.currentVal }), /*#__PURE__*/
+      React.createElement(Buttons, {
+        decimal: this.handleDecimal,
+        evaluate: this.handleEvaluate,
+        initialize: this.initialize,
+        numbers: this.handleNumbers,
+        operators: this.handleOperators })), /*#__PURE__*/
+
+
+      React.createElement("div", { className: "author" },
+      ' ', "Designed and Coded By ", /*#__PURE__*/
+      React.createElement("br", null), /*#__PURE__*/
+      React.createElement("a", { href: "https://goo.gl/6NNLMG", target: "_blank" }, "Peter Weinberg"))));
+
+
+
+
+
+  }}
+
+
+class Buttons extends React.Component {
+  render() {
+    return /*#__PURE__*/(
+      React.createElement("div", null, /*#__PURE__*/
+      React.createElement("button", {
+        className: "jumbo",
+        id: "clear",
+        onClick: this.props.initialize,
+        style: clearStyle,
+        value: "AC" }, "AC"), /*#__PURE__*/
+
+
+
+      React.createElement("button", {
+        id: "divide",
+        onClick: this.props.operators,
+        style: operatorStyle,
+        value: "/" }, "/"), /*#__PURE__*/
+
+
+
+      React.createElement("button", {
+        id: "multiply",
+        onClick: this.props.operators,
+        style: operatorStyle,
+        value: "x" }, "x"), /*#__PURE__*/
+
+
+
+      React.createElement("button", { id: "seven", onClick: this.props.numbers, value: "7" }, "7"), /*#__PURE__*/
+
+
+      React.createElement("button", { id: "eight", onClick: this.props.numbers, value: "8" }, "8"), /*#__PURE__*/
+
+
+      React.createElement("button", { id: "nine", onClick: this.props.numbers, value: "9" }, "9"), /*#__PURE__*/
+
+
+      React.createElement("button", {
+        id: "subtract",
+        onClick: this.props.operators,
+        style: operatorStyle,
+        value: "\u2011" }, "\u2011"), /*#__PURE__*/
+
+
+
+      React.createElement("button", { id: "four", onClick: this.props.numbers, value: "4" }, "4"), /*#__PURE__*/
+
+
+      React.createElement("button", { id: "five", onClick: this.props.numbers, value: "5" }, "5"), /*#__PURE__*/
+
+
+      React.createElement("button", { id: "six", onClick: this.props.numbers, value: "6" }, "6"), /*#__PURE__*/
+
+
+      React.createElement("button", {
+        id: "add",
+        onClick: this.props.operators,
+        style: operatorStyle,
+        value: "+" }, "+"), /*#__PURE__*/
+
+
+
+      React.createElement("button", { id: "one", onClick: this.props.numbers, value: "1" }, "1"), /*#__PURE__*/
+
+
+      React.createElement("button", { id: "two", onClick: this.props.numbers, value: "2" }, "2"), /*#__PURE__*/
+
+
+      React.createElement("button", { id: "three", onClick: this.props.numbers, value: "3" }, "3"), /*#__PURE__*/
+
+
+      React.createElement("button", {
+        className: "jumbo",
+        id: "zero",
+        onClick: this.props.numbers,
+        value: "0" }, "0"), /*#__PURE__*/
+
+
+
+      React.createElement("button", { id: "decimal", onClick: this.props.decimal, value: "." }, "."), /*#__PURE__*/
+
+
+      React.createElement("button", {
+        id: "equals",
+        onClick: this.props.evaluate,
+        style: equalsStyle,
+        value: "=" }, "=")));
+
+
+
+
+
+  }}
+
+
+class Output extends React.Component {
+  render() {
+    return /*#__PURE__*/(
+      React.createElement("div", { className: "outputScreen", id: "display" },
+      this.props.currentValue));
+
+
+  }}
+
+
+class Formula extends React.Component {
+  render() {
+    return /*#__PURE__*/React.createElement("div", { className: "formulaScreen" }, this.props.formula);
+  }}
+
+
+ReactDOM.render( /*#__PURE__*/React.createElement(Calculator, null), document.getElementById('app'));
+//# sourceURL=pen.js
+    </script>
+
+  
+
+
+
+
+ 
+</body></html>
